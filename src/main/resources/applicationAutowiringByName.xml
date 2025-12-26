@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <bean id="specification" class="com.autowire.name.Specification">
+        <property name="make" value="BMW"/>
+        <property name="model" value="M5"/>
+    </bean>
+    <bean id="myCar" class="com.autowire.name.Car" autowire="byName">
+        <!-- while we autowire by name, the name of bean should be same as property name in car class, here it is 'specification' -->
+        <!-- while we use byName, injection occurs through setter -->
+       <!-- no need of this <constructor-arg ref="specification"/> -->
+    </bean>
+
+</beans>
