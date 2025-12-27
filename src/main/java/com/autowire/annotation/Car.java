@@ -2,12 +2,14 @@ package com.autowire.annotation;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Car {
 
     @Autowired // this is field injection
+    @Qualifier("specification") // i want this type of bean with this name
     private Specification specification;
 
 
